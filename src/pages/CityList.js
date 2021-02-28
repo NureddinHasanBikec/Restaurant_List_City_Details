@@ -12,12 +12,11 @@ const CityList = (props) => {
     
 
     const fetchCityData = async () => {
-       const {data} = await axios.get("http://opentable.herokuapp.com/api/cities");
-       console.log(data);
-       setCityList(data.cities)
-       originalList = [...data.cities]
-    }
-
+        const {data} = await axios.get('http://opentable.herokuapp.com/api/cities');
+        console.log(data);
+        setCityList(data.cities);
+        originalList = [...data.cities];
+      };
     useEffect(()=>{
         fetchCityData();
     }, [])
